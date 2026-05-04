@@ -1,0 +1,20 @@
+repos:
+  # Hooks estándar de pre-commit
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace        # Eliminar espacios al final
+      - id: end-of-file-fixer          # Asegurar newline al final
+      - id: check-yaml                 # Validar archivos YAML
+      - id: check-toml                 # Validar archivos TOML
+      - id: check-added-large-files    # Prevenir datasets en Git
+        args: ["--maxkb=500"]
+      - id: check-merge-conflict       # Detectar conflictos sin resolver
+
+  # ruff: linter + formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.0
+    hooks:
+      - id: ruff                       # Linter (con --fix)
+        args: [--fix]
+      - id: ruff-format               # Formatter

@@ -1,4 +1,4 @@
-# Detección de transacciones fraudulentas
+# Clasificación de Sentimineto de Noticias
 
 ## Descripción
 
@@ -12,6 +12,6 @@
 
 ## Contacto
 
-@author: bargof 
+@author: bargof
 * github: github.com/bargof
-* email: fernando.barrios.gomez@itam.mx
+* email:
