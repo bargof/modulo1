@@ -9,7 +9,7 @@
 ## Estructura del proyecto
 
 ## Datos
-
+Se utilizó sentences_50agree para maximizar el tamaño del dataset, aceptando que puede contener más ruido en las etiquetas que versiones con mayor acuerdo entre anotadores.
 ## Contacto
 
 @author: bargof
