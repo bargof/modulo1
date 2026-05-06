@@ -1,0 +1,5 @@
+outs:
+- md5: de949f3f35f243cdc66ce3642e84c4bf
+  size: 645986
+  hash: md5
+  path: financial_phrasebank.csv
