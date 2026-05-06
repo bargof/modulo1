@@ -1,0 +1,5 @@
+outs:
+- md5: 922c0d12dc57a5d51da0b252a0e6a852
+  size: 685245
+  hash: md5
+  path: financial_phrasebank_processed.csv

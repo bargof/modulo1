@@ -25,10 +25,8 @@ class Settings(BaseSettings):
     base_dir: Path = Path(__file__).resolve().parents[3]
 
     # --- Base de datos ---
-    database_url: str = Field(
-        default="sqlite:///local.db",
-        description="URL de conexión a la base de datos",
-    )
+    raw_data_dir: Path = Path("data/raw")
+    processed_data_dir: Path = Path("data/processed")
 
     # --- APIs externas ---
     bloomberg_api_key: str = Field(default="", description="API key de Bloomberg")
@@ -72,3 +70,6 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     """Retorna la configuración de la aplicación."""
     return Settings()
+
+
+settings = get_settings()
