@@ -62,6 +62,7 @@ class Settings(BaseSettings):
         "case_sensitive": False,
         "extra": "ignore",  # Ignora variables de entorno no definidas aquí
     }
+    models_dir: Path = base_dir / "models"
 
 
 # ═══════════════════════════════════════════

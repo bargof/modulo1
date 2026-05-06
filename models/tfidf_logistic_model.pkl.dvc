@@ -1,0 +1,5 @@
+outs:
+- md5: b3a44350a06b6465b9f603d8a47c3789
+  size: 635425
+  hash: md5
+  path: tfidf_logistic_model.pkl
