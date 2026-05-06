@@ -18,18 +18,21 @@ __pycache__/
 # ═══════════════════════════════════════════
 .env
 .env.*
-
 # Permitir template
 !.env.example
 
 # ═══════════════════════════════════════════
 # Datos (tu carpeta data/)
 # ═══════════════════════════════════════════
-data/
 
-# Si quieres mantener estructura:
-# data/*
-# !data/.gitkeep
+data/raw/*
+data/processed/*
+# Keep DVC tracking files
+!data/raw/*.dvc
+!data/processed/*.dvc
+# Keep folders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
 
 # ═══════════════════════════════════════════
 # Modelos entrenados (tu carpeta models/)
