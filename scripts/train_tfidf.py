@@ -9,6 +9,7 @@ from proyecto.application.services.training_service import (
 )
 from proyecto.config.logging import setup_logging
 from proyecto.config.settings import settings
+from proyecto.evaluation.reporting import upsert_model_metrics_report
 from proyecto.models.tfidf_logistic_model import TfidfLogisticSentimentModel
 
 setup_logging(level=settings.log_level, log_file=str(settings.log_file))
@@ -82,6 +83,15 @@ def main() -> None:
         mlflow.log_artifact(str(model_path), artifact_path="model")
 
         logger.info("Run de MLflow terminado correctamente")
+
+    # agrega a reports
+    report_path = settings.reports_dir / "model_metrics.json"
+
+    upsert_model_metrics_report(
+        report_path=report_path,
+        model_name="TF-IDF + Logistic Regression",
+        metrics=metrics,
+    )
 
 
 if __name__ == "__main__":
