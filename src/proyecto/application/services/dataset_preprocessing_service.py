@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 
 import pandas as pd
-from proyecto.domain.schemas import (
+from proyecto.data.schemas import (
     validate_processed_financial_phrasebank,
     validate_raw_financial_phrasebank,
 )
