@@ -1,0 +1,5 @@
+outs:
+- md5: c285cdcedff67e27ebdf5320b55a501b
+  size: 201181
+  hash: md5
+  path: embedding_mlp_model.pt

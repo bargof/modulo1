@@ -37,11 +37,13 @@ data/processed/*
 # ═══════════════════════════════════════════
 # Modelos entrenados (tu carpeta models/)
 # ═══════════════════════════════════════════
-models/
+#models/
 *.pkl
 *.joblib
 *.pt
 *.h5
+!models/*.dvc
+!models/.gitkeep
 
 # ═══════════════════════════════════════════
 # Logs
