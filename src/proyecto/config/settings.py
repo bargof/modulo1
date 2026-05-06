@@ -68,6 +68,9 @@ class Settings(BaseSettings):
     mlflow_tracking_uri: str = "sqlite:///mlflow.db"
     mlflow_experiment_name: str = "financial-sentiment-classification"
 
+    # --- Reports---
+    reports_dir: Path = base_dir / "reports"
+
 
 # ═══════════════════════════════════════════
 # Patrón singleton: una sola instancia de configuración
