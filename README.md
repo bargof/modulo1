@@ -1,4 +1,4 @@
-# Clasificación de Sentimineto de Noticias
+# Clasificación de Sentimiento de Noticias
 
 ## Descripción
 
@@ -7,11 +7,10 @@
 El proyecto consiste en construir un sistema de clasificación de sentimiento para textos financieros.
 
 Dado un texto como una frase, titular o fragmento de noticia financiera, el sistema deberá clasificarlo en una de tres categorías:
+
 - **positive**: el texto comunica información favorable para una empresa, mercado o activo financiero.
 - **neutral**: el texto comunica información descriptiva o factual, sin una dirección claramente positiva o negativa.
 - **negative**: el texto comunica información desfavorable, como caídas, pérdidas, riesgos o deterioro en resultados.
-
-Ejemplo conceptual:
 
 | Texto | Sentimiento esperado |
 |---|---|
@@ -21,38 +20,120 @@ Ejemplo conceptual:
 
 El objetivo final será comparar al menos dos enfoques de modelado:
 
-1. Un modelo baseline clásico basado en **TF-IDF + Logistic Regression**.
-2. Un modelo basado en **embeddings de Hugging Face** y clasificación posterior.
+1. TF-IDF + Logistic Regression.
+2. Embeddings de Hugging Face + clasificador posterior.
+
+---
 
 ## Instalación
 
+### 1. Clonar repositorio
+
+```bash
+git clone <repo>
+cd modulo1
+```
+
+### 2. Instalar dependencias
+
+```bash
+poetry install
+```
+
+### 3. Descargar datos con DVC
+
+```bash
+poetry run dvc pull
+```
+
+---
+
 ## Uso
+
+### Ejecutar pruebas
+
+```bash
+poetry run pytest
+```
+
+### Construir contenedor Docker
+
+```bash
+docker build -t modulo-uno .
+```
+
+### Ejecutar contenedor
+
+```bash
+docker run --rm modulo-uno
+```
+
+---
 
 ## Estructura del proyecto
 
+```text
+modulo1/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+├── src/
+│   └── proyecto/
+│
+├── tests/
+├── Dockerfile
+├── pyproject.toml
+├── poetry.lock
+├── README.md
+└── .dvc/
+```
+
+---
+
 ## Datos
 
-Se utilizó sentences_50agree para maximizar el tamaño del dataset, aceptando que puede contener más ruido en las etiquetas que versiones con mayor acuerdo entre anotadores.
+Se utilizó `sentences_50agree` para maximizar el tamaño del dataset, aceptando que puede contener más ruido en las etiquetas que versiones con mayor acuerdo entre anotadores.
 
-## 2. Fuente de datos
+### Fuente de datos
 
 El dataset utilizado es **Financial PhraseBank**, un corpus de frases financieras anotadas con sentimiento.
 
-Este dataset contiene frases extraídas de noticias financieras y clasificadas en tres categorías principales:
+Las categorías utilizadas son:
 
 - positive
 - neutral
 - negative
 
-Para este proyecto se utilizará una versión del dataset descargada desde Hugging Face y guardada localmente en:
+El dataset se descarga desde Hugging Face y se almacena en:
 
-`data/raw/financial_phrasebank.csv`
+```text
+data/raw/financial_phrasebank.csv
+```
 
-El archivo raw no debe modificarse manualmente. Cualquier limpieza o transformación posterior deberá generar nuevos archivos dentro de `data/processed/`.
+El archivo raw no debe modificarse manualmente. Las transformaciones deben guardarse en `data/processed/`.
 
+---
+
+## Tecnologías utilizadas
+
+- Python
+- Poetry
+- Pandas
+- Scikit-learn
+- Hugging Face
+- DVC
+- Docker
+- Pytest
+- MLflow
+
+---
 
 ## Contacto
 
 @author: bargof
-* github: github.com/bargof
-* email:
+
+- GitHub: github.com/bargof
+- Email: tu_email

@@ -1,19 +1,20 @@
 .git
-.github
-.dvc/cache
 .venv
 __pycache__
-*.pyc
 .pytest_cache
-.ruff_cache
 .mypy_cache
+.ruff_cache
 .ipynb_checkpoints
 
-logs/
-mlruns/
-mlflow.db
+.dvc/cache
+dvc-storage
+mlruns
+notebooks
 
-notebooks/
-tests/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
 
-.env
+data/interim
+data/processed

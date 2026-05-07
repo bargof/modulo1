@@ -17,7 +17,8 @@ RUN pip install poetry
 COPY pyproject.toml poetry.lock ./
 
 RUN poetry config virtualenvs.create false \
-    && poetry install --only main --no-interaction --no-ansi
+    && poetry install --only main --no-root --no-interaction --no-ansi \
+    && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
 
 COPY app.py ./
 COPY src ./src
