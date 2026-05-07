@@ -63,7 +63,7 @@ def render_probability_chart(probabilities: dict[str, float]) -> None:
     st.plotly_chart(fig, use_container_width=True)
 
 
-st.title("📈 Financial News Sentiment Classifier")
+st.title("Clasificación de Sentimiento de Noticias Financieras")
 
 st.write(
     """
@@ -94,22 +94,34 @@ if st.button("Clasificar sentimiento"):
     prediction_service = SentimentPredictionService(model=model)
     result = prediction_service.predict_text(user_text)
 
+    st.divider()
     st.subheader("Resultado")
 
-    st.metric(
-        label="Sentimiento predicho",
-        value=result.predicted_label,
-    )
+    sentiment = result.predicted_label
+    delta_value = {
+        "positive": "+1 Positivo",
+        "neutral": "0 Neutral",
+        "negative": "-1 Negativo",
+    }[sentiment]
+
+    c1, c2 = st.columns(2)
+    with c1:
+        st.metric(
+            border=True,
+            label="Predicción:",
+            value="",
+            delta=delta_value,
+        )
+    with c2:
+        st.dataframe(
+            pd.DataFrame(
+                {
+                    "sentiment": list(result.probabilities.keys()),
+                    "probability": list(result.probabilities.values()),
+                }
+            ),
+            use_container_width=True,
+        )
 
     st.write("### Probabilidades")
     render_probability_chart(result.probabilities)
-
-    st.dataframe(
-        pd.DataFrame(
-            {
-                "sentiment": list(result.probabilities.keys()),
-                "probability": list(result.probabilities.values()),
-            }
-        ),
-        use_container_width=True,
-    )

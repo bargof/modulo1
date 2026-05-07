@@ -100,9 +100,12 @@ def render_confusion_matrix(matrix: list[list[int]], model_name: str) -> None:
 
 st.subheader("Matrices de confusión")
 
-for record in metrics_df.to_dict(orient="records"):
-    st.write(f"### {record['model']}")
-    render_confusion_matrix(
-        matrix=record["confusion_matrix"],
-        model_name=record["model"],
-    )
+cols = st.columns(2)
+
+for i, record in enumerate(metrics_df.to_dict(orient="records")):
+    with cols[i]:
+        st.write(f"### {record['model']}")
+        render_confusion_matrix(
+            matrix=record["confusion_matrix"],
+            model_name=record["model"],
+        )
