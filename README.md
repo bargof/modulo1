@@ -107,7 +107,7 @@ Las categorías utilizadas son:
 - neutral
 - negative
 
-El dataset se descarga desde Hugging Face y se almacena en:
+El dataset se descarga desde Hugging Face, ejecutando el script de descarga, y se almacena en:
 
 ```text
 data/raw/financial_phrasebank.csv
@@ -121,9 +121,9 @@ El archivo raw no debe modificarse manualmente. Las transformaciones deben guard
 
 - Python
 - Poetry
-- Pandas
 - Scikit-learn
 - Hugging Face
+- PyTorch
 - DVC
 - Docker
 - Pytest
@@ -136,4 +136,4 @@ El archivo raw no debe modificarse manualmente. Las transformaciones deben guard
 @author: bargof
 
 - GitHub: github.com/bargof
-- Email: 
+- Email:
