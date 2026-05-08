@@ -2,7 +2,7 @@
 name = "modulo_uno"
 version = "0.0.1"
 description = "Detección de fraudes (anomalías)"
-authors = ["Tu Nombre"]
+authors = ["Bargof"]
 readme = "README.md"
 packages = [{ include = "proyecto", from = "src" }]
 
