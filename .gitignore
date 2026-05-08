@@ -95,5 +95,7 @@ htmlcov/
 # Scripts temporales
 # ═══════════════════════════════════════════
 scripts/tmp/
+
+
 /mlflow.db
 /mlruns
